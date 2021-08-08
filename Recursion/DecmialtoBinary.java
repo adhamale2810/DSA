@@ -2,7 +2,7 @@ package Recursion;
 
 import java.util.Scanner;
 
-public class Basic3 {
+public class DecmialtoBinary {
 
 	private static void fun(int n) {
 		if (n == 0) {
