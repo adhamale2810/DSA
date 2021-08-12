@@ -13,24 +13,26 @@ import java.util.Scanner;
 
 public class TowerOfHanoi {
 
-	private static void pm(int start, int end) {
-		System.out.println(start + " -> " + end);
-	}
-
-	private static void toh(int n, int start, int end) {
-		if (n == 1) {
-			pm(start, end);
-		} else {
-			int other = 6 - (start + end);
-			toh(n - 1, start, other);
-			pm(start, end);
-			toh(n - 1, other, end);
+	// disks specifies the number of disks to be moved at particular recursion
+	// 1st parameter is Source
+	// 2nd parameter is Helper
+	// 3rd parameter is Destination
+	private static void toh(int disks, char A, char B, char C) {
+		if (disks == 1) {
+			System.out.println(A + " -> " + C);
+			return;
 		}
+		toh(disks - 1, A, C, B);
+		System.out.println(A + " -> " + C);
+		toh(disks - 1, B, A, C);
 	}
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		toh(sc.nextInt(), 1, 3);
+		int disks = sc.nextInt();
+		System.out.println("Transfer all disks from source A to destination C using B");
+		System.out.println("Steps:");
+		toh(disks, 'A', 'B', 'C');
 		sc.close();
 	}
 }
