@@ -1,3 +1,6 @@
+/**
+ * You are given an integer N. Print numbers from 1 to N without the help of loops.
+ */
 package Recursion.Problems;
 
 import java.util.Scanner;
