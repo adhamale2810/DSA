@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class MaximumConsecutiveOnes {
 
 	private static int maxOnes(int[] arr, int n) {
-		int c = 0;
 		int max = 0;
+		int c = 0;
 		for (int i = 0; i < n; i++) {
-			if (arr[i] == 1) {
-				c++;
-			} else {
+			if (arr[i] == 0) {
 				c = 0;
+			} else {
+				c++;
+				max = Math.max(max, c);
 			}
-			max = c > max ? c : max;
 		}
 		return max;
 	}

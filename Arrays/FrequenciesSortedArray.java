@@ -21,6 +21,24 @@ public class FrequenciesSortedArray {
 		}
 	}
 
+	private static void myFrequency(int[] arr, int n) {
+		int curr = arr[0];
+		int count = 1;
+		for (int i = 1; i < n; i++) {
+			if (curr == arr[i]) {
+				count++;
+			}
+			if (curr != arr[i]) {
+				System.out.println(curr + " " + count);
+				curr = arr[i];
+				count = 1;
+			}
+			if (i == n - 1) {
+				System.out.println(curr + " " + count);
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
@@ -28,7 +46,7 @@ public class FrequenciesSortedArray {
 		for (int i = 0; i < n; i++) {
 			arr[i] = sc.nextInt();
 		}
-		frequency(arr, n);
+		myFrequency(arr, n);
 		sc.close();
 	}
 }
