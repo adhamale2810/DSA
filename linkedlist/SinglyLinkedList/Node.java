@@ -1,12 +1,11 @@
 package linkedlist.SinglyLinkedList;
 
-public class Node
-{
-int data;
-Node next;
-Node( int d )
-	{
-		data = d;
-		next = null;
-	}
+public class Node {
+    public int data;
+    public Node next;
+
+    public Node(int d) {
+        data = d;
+        next = null;
+    }
 }
